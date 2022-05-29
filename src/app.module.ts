@@ -27,7 +27,7 @@ import { CountryModule } from './components/country/country.module';
       database: 'd6l7qtjpno9p65',
       logging: false,
       entities: ['dist/entities/**/*.js'],
-      synchronize: false,
+      synchronize: true,
     }),
 
     CountryModule,
@@ -35,4 +35,4 @@ import { CountryModule } from './components/country/country.module';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}
