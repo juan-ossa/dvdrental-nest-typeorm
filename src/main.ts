@@ -8,8 +8,8 @@ async function bootstrap() {
   const logger = new Logger();
 
   const config = new DocumentBuilder()
-    .setTitle('Sakila Docs')
-    .setDescription('Descripcion de los APIs Sakila')
+    .setTitle('DVD Rental Docs')
+    .setDescription('Descripcion de los APIs')
     .setVersion('1.0')
     .build();
 
