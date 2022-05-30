@@ -3,6 +3,7 @@ import {
   Controller,
   Delete,
   Get,
+  HttpCode,
   Param,
   Post,
   Put,
@@ -39,11 +40,13 @@ export class CountryController {
   }
 
   @Post()
+  @HttpCode(200)
   // createTask(@Body() task: Country) {
   createTask(@Body() task) {
     console.log('aqui ..');
     console.log(task);
     return this.countryService.create(task);
+    // return { data: task };
   }
 
   // @Post()
