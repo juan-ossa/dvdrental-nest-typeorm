@@ -10,7 +10,10 @@ export class CountryService {
     private countryRepository: Repository<Country>,
   ) {}
 
-  findAll(): Promise<Country[]> {
+  // findAll(): Promise<Country[]> {
+  //   return this.countryRepository.find();
+  // }
+  findAll() {
     return this.countryRepository.find();
   }
 
