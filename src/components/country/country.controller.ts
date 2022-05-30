@@ -9,13 +9,13 @@ import {
   Put,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { Country } from 'src/entities/Country';
+// import { Country } from 'src/entities/Country';
 import { CountryService } from './country.service';
 
 @ApiTags(' Paises')
 @Controller('api/country')
 export class CountryController {
-  constructor(private countryService: CountryService) { }
+  constructor(private countryService: CountryService) {}
 
   // @Get()
   // async getCountries(): Promise<{}> {
