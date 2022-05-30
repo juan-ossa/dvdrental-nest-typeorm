@@ -17,19 +17,17 @@ import { CountryService } from './country.service';
 export class CountryController {
   constructor(private countryService: CountryService) { }
 
+  // @Get()
+  // async getCountries(): Promise<{}> {
+  //   console.log('pasa por list country sin param');
+  //   const countries = await this.countryService.findAll();
+  //   if (countries) return { error: null, data: countries };
+  //   else return { error: 'no hay paises ' };
+  // }
   @Get()
-  async getCountries(): Promise<{}> {
+  getCountries() {
     console.log('pasa por list country sin param');
-    // console.log("const Country Controller "+this.connection.name);
-    // const users =  await this.connection.manager.find("Country");
-    // const users =  await getConnection(NOMBRECONECCION).getRepository(Country).find();
-    // const users =  await this.connection.getRepository(Country).find();
-    // return res.send(users);
-    // if (users)
-    //     res.json({ error: null, data: users });
-    // else
-    //     res.json({ error: 'no hay paises ' });
-    const countries = await this.countryService.findAll();
+    const countries = this.countryService.findAll();
     if (countries) return { error: null, data: countries };
     else return { error: 'no hay paises ' };
   }
