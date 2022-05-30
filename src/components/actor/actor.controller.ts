@@ -6,18 +6,24 @@ import {
   Patch,
   Param,
   Delete,
+  UsePipes,
+  ValidationPipe,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { ActorService } from './actor.service';
 import { CreateActorDto } from './dto/create-actor.dto';
 import { UpdateActorDto } from './dto/update-actor.dto';
 
-@Controller('actor')
+
+@ApiTags(' Actores')
+@Controller('api/actor')
 export class ActorController {
-  constructor(private readonly actorService: ActorService) {}
+  constructor(private readonly actorService: ActorService) { }
 
   @Post()
-  create(@Body() createActorDto: CreateActorDto) {
-    return this.actorService.create(createActorDto);
+  @UsePipes(ValidationPipe)
+  async create(@Body() createActorDto: CreateActorDto) {
+    return await this.actorService.create(createActorDto);
   }
 
   @Get()
