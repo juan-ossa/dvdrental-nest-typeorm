@@ -46,6 +46,11 @@ export class CountryController {
     return this.countryService.create(task);
   }
 
+  // @Post()
+  // create(@Body() createActorDto: CreateActorDto) {
+  //   return this.actorService.create(createActorDto);
+  // }
+
   @Put(':id')
   updateTask(@Body() task, @Param('id') id: string) {
     console.log(task);
