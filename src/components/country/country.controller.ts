@@ -25,9 +25,9 @@ export class CountryController {
   //   else return { error: 'no hay paises ' };
   // }
   @Get()
-  getCountries() {
+  async getCountries() {
     console.log('pasa por list country sin param');
-    const countries = this.countryService.findAll();
+    const countries = await this.countryService.findAll();
     if (countries) return { error: null, data: countries };
     else return { error: 'no hay paises ' };
   }
