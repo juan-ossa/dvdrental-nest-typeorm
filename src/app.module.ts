@@ -25,7 +25,7 @@ import { ActorModule } from './components/actor/actor.module';
     //   username: 'xxxxxxx',
     //   password:
     //     'xxxxxxxxx',
-    //   database: 'd6l7qtjpno9p65',
+    //   database: 'XXXXX',
     //   logging: false,
     //   entities: ['dist/entities/**/*.js'],
     //   synchronize: false,
