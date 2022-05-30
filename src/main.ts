@@ -19,6 +19,6 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
   const PORT = process.env.PORT || 3000;
   await app.listen(PORT);
-  logger.log(`Escuchando por el puerto 3000  y url ${await app.getUrl()}`);
+  logger.log(`Escuchando por el puerto ${PORT}  y url ${await app.getUrl()}`);
 }
 bootstrap();

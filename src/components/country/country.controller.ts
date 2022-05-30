@@ -14,7 +14,7 @@ import { CountryService } from './country.service';
 @ApiTags(' Paises')
 @Controller('api/country')
 export class CountryController {
-  constructor(private countryService: CountryService) {}
+  constructor(private countryService: CountryService) { }
 
   @Get()
   async getCountries(): Promise<{}> {
@@ -39,13 +39,15 @@ export class CountryController {
   }
 
   @Post()
-  createTask(@Body() task: Country) {
+  // createTask(@Body() task: Country) {
+  createTask(@Body() task) {
+    console.log('aqui ..');
     console.log(task);
     return this.countryService.create(task);
   }
 
   @Put(':id')
-  updateTask(@Body() task: Country, @Param('id') id: string) {
+  updateTask(@Body() task, @Param('id') id: string) {
     console.log(task);
     console.log(id);
 
